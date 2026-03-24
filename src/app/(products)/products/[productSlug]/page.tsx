@@ -1,0 +1,176 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import Container from "@/components/layout/Container";
+import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
+import SectionHeader from "@/components/ui/SectionHeader";
+import {
+  getProductContent,
+  productContentList,
+} from "@/lib/content/products/[productSlug]";
+import { buildMetadata } from "@/lib/seo/metadata";
+
+type ProductPageProps = {
+  params: Promise<{ productSlug: string }>;
+};
+
+export function generateStaticParams() {
+  return productContentList.map((product) => ({
+    productSlug: product.slug,
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: ProductPageProps): Promise<Metadata> {
+  const { productSlug } = await params;
+  const product = getProductContent(productSlug);
+
+  if (!product) {
+    return buildMetadata({
+      title: "Product Not Found",
+      description: "The requested Procitec product page could not be found.",
+      path: `/products/${productSlug}`,
+    });
+  }
+
+  return buildMetadata({
+    title: product.seo.title,
+    description: product.seo.description,
+    path: `/products/${product.slug}`,
+  });
+}
+
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { productSlug } = await params;
+  const product = getProductContent(productSlug);
+
+  if (!product) {
+    notFound();
+  }
+
+  return (
+    <>
+      <section className="border-b border-border bg-surface py-16 sm:py-20">
+        <Container className="space-y-6">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="rounded-full bg-background px-3 py-1 text-xs font-semibold text-text-secondary">
+              {product.status}
+            </span>
+            <span className="text-sm font-semibold uppercase tracking-widest text-primary">
+              {product.eyebrow}
+            </span>
+          </div>
+
+          <div className="space-y-4">
+            <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-text-primary sm:text-5xl">
+              {product.seo.title}
+            </h1>
+            <p className="max-w-3xl text-base leading-7 text-text-secondary sm:text-lg">
+              {product.description}
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button href={product.primaryCta.href} size="lg" className="w-full sm:w-auto">
+              {product.primaryCta.label}
+            </Button>
+            {product.secondaryCta ? (
+              <Button
+                href={product.secondaryCta.href}
+                variant="secondary"
+                size="lg"
+                className="w-full sm:w-auto"
+              >
+                {product.secondaryCta.label}
+              </Button>
+            ) : null}
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-20">
+        <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
+          <SectionHeader
+            eyebrow="Capabilities"
+            title={`What ${product.name} helps teams do.`}
+            description={product.summary}
+          />
+
+          <div className="grid gap-4">
+            {product.capabilities.map((capability) => (
+              <Card key={capability.title}>
+                <h2 className="text-lg font-semibold text-text-primary">
+                  {capability.title}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-text-secondary">
+                  {capability.description}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-y border-border bg-surface py-16 sm:py-20">
+        <Container className="grid gap-10 lg:grid-cols-2">
+          <Card className="bg-background">
+            <h2 className="text-lg font-semibold text-text-primary">Benefits</h2>
+            <ul className="mt-5 space-y-3">
+              {product.benefits.map((benefit) => (
+                <li key={benefit} className="text-sm leading-6 text-text-secondary">
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </Card>
+
+          <Card className="bg-background">
+            <h2 className="text-lg font-semibold text-text-primary">Fit</h2>
+            <div className="mt-5 space-y-4">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-text-muted">
+                  Audience
+                </p>
+                <p className="mt-2 text-sm leading-6 text-text-secondary">
+                  {product.audience.join(", ")}
+                </p>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-text-muted">
+                  Industries
+                </p>
+                <p className="mt-2 text-sm leading-6 text-text-secondary">
+                  {product.industries.join(", ")}
+                </p>
+              </div>
+            </div>
+          </Card>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-20">
+        <Container className="space-y-10">
+          <SectionHeader
+            eyebrow="FAQ"
+            title={`Common questions about ${product.name}.`}
+            description="Structured answers help both human readers and AI systems extract the right context quickly."
+          />
+
+          <div className="grid gap-4">
+            {product.faq.map((item) => (
+              <Card key={item.question}>
+                <h2 className="text-lg font-semibold text-text-primary">
+                  {item.question}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-text-secondary">
+                  {item.answer}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+    </>
+  );
+}

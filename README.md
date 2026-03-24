@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Procitec.io
 
-## Getting Started
+Procitec.io is the **product platform website** for Procitec applications.
 
-First, run the development server:
+This repository is **not** the corporate website and should not duplicate `procitec.in`.
+Its role is to present Procitec applications such as EAM and EMS, guide users to product entry points, and support discovery, trust, and conversion.
 
+## Domain Strategy
+- `procitec.in` → Corporate website, solutions, SEO, blog, WordPress
+- `procitec.io` → Product platform website
+- `eam.procitec.io` → EAM application
+- `ems.procitec.io` → EMS application
+
+## Stack
+- Next.js App Router
+- React
+- TypeScript
+- Tailwind CSS
+
+## Core Goals
+- present Procitec applications clearly
+- drive qualified industrial users deeper into product pages
+- support mobile-first conversion
+- maintain a premium industrial B2B design language
+- stay consistent across all UI
+
+## Local Development
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
+```text
+http://localhost:3000
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## AI / Codex Workflow
+Before making changes, read:
+- `AGENTS.md`
+- `PROJECT_BRIEF.md`
+- `DESIGN_RULES.md`
+- `CONTENT_GUIDE.md`
+- `DESIGN_TOKENS.md`
+- `UI_STANDARDIZATION_SYSTEM.md`
+- `TAILWIND_THEME_IMPLEMENTATION.md`
 
-## Learn More
+## Recommended Component Foundation
+- `components/ui/Button.tsx`
+- `components/ui/Card.tsx`
+- `components/layout/Container.tsx`
 
-To learn more about Next.js, take a look at the following resources:
+## Key Rules
+- do not duplicate the corporate website
+- do not use random colors, shadows, or spacing
+- do not design desktop first and patch mobile later
+- do not use startup-hype copy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Priority Build Order
+1. design tokens + Tailwind theme
+2. reusable UI primitives
+3. homepage
+4. applications page
+5. platform page
+6. support + contact

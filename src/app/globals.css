@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --font-family-base: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  --color-primary-base: #8b3dff;
+  --color-primary-hover-base: #7a2fe0;
+  --color-primary-foreground-base: #ffffff;
+
+  --color-accent-base: #e1511b;
+  --color-accent-hover-base: #c94315;
+  --color-accent-foreground-base: #ffffff;
+
+  --color-background-base: #ffffff;
+  --color-surface-base: #f8fafc;
+  --color-muted-surface-base: #f1f5f9;
+
+  --color-text-primary-base: #0f172a;
+  --color-text-secondary-base: #475569;
+  --color-text-muted-base: #64748b;
+
+  --color-border-base: #e2e8f0;
+  --color-border-strong-base: #cbd5e1;
+
+  --radius-sm-base: 6px;
+  --radius-md-base: 10px;
+  --radius-lg-base: 16px;
+
+  --shadow-soft-base: 0 1px 3px rgba(15, 23, 42, 0.08);
+  --shadow-medium-base: 0 4px 10px rgba(15, 23, 42, 0.1);
+  --shadow-elevated-base: 0 10px 25px rgba(15, 23, 42, 0.12);
+
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+}
+
+@theme inline {
+  --font-sans: var(--font-family-base);
+  --font-mono: var(--font-family-mono);
+
+  --color-primary: var(--color-primary-base);
+  --color-primary-hover: var(--color-primary-hover-base);
+  --color-primary-foreground: var(--color-primary-foreground-base);
+
+  --color-accent: var(--color-accent-base);
+  --color-accent-hover: var(--color-accent-hover-base);
+  --color-accent-foreground: var(--color-accent-foreground-base);
+
+  --color-background: var(--color-background-base);
+  --color-surface: var(--color-surface-base);
+  --color-muted-surface: var(--color-muted-surface-base);
+  --color-muted: var(--color-muted-surface-base);
+
+  --color-text-primary: var(--color-text-primary-base);
+  --color-text-secondary: var(--color-text-secondary-base);
+  --color-text-muted: var(--color-text-muted-base);
+
+  --color-border: var(--color-border-base);
+  --color-border-strong: var(--color-border-strong-base);
+
+  --radius-sm: var(--radius-sm-base);
+  --radius-md: var(--radius-md-base);
+  --radius-lg: var(--radius-lg-base);
+
+  --shadow-soft: var(--shadow-soft-base);
+  --shadow-medium: var(--shadow-medium-base);
+  --shadow-elevated: var(--shadow-elevated-base);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background font-sans text-text-primary antialiased;
+  min-height: 100vh;
+}
+
+a {
+  @apply transition-colors;
+}
