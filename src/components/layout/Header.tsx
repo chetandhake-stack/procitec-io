@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Button from "@/components/ui/Button";
@@ -18,8 +19,15 @@ export function Header() {
       <Container>
         <div className="flex h-16 items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-2">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary text-sm font-bold text-primary-foreground shadow-soft">
-              P
+            <span className="inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-md border border-border bg-background shadow-soft">
+              <Image
+                src={siteConfig.logo.src}
+                alt={siteConfig.logo.alt}
+                width={36}
+                height={36}
+                className="h-full w-full object-cover"
+                priority
+              />
             </span>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-text-primary">{siteConfig.name}</p>

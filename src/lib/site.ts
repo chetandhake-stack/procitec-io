@@ -1,6 +1,10 @@
 export const siteConfig = {
   name: "Procitec.io",
   shortName: "Procitec",
+  logo: {
+    src: "/icons/Procitec%20Logo.svg",
+    alt: "Procitec logo",
+  },
   description:
     "Product platform website for Procitec applications including EAM, EMS, and future industrial software products.",
   url: "https://procitec.io",

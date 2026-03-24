@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/layout/Container";
 import { footerNavigation, productNavigation } from "@/lib/navigation";
@@ -10,8 +11,14 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary text-sm font-bold text-primary-foreground shadow-soft">
-                P
+              <span className="inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-md border border-border bg-background shadow-soft">
+                <Image
+                  src={siteConfig.logo.src}
+                  alt={siteConfig.logo.alt}
+                  width={36}
+                  height={36}
+                  className="h-full w-full object-cover"
+                />
               </span>
               <div>
                 <p className="text-sm font-semibold text-text-primary">{siteConfig.name}</p>

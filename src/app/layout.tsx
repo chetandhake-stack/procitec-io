@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://procitec.io"),
@@ -11,6 +12,11 @@ export const metadata: Metadata = {
   },
   description:
     "Procitec.io is the product platform for industrial applications such as EAM and EMS.",
+  icons: {
+    icon: siteConfig.logo.src,
+    shortcut: siteConfig.logo.src,
+    apple: siteConfig.logo.src,
+  },
   openGraph: {
     title: "Procitec.io",
     description:

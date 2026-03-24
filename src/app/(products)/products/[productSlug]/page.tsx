@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/components/layout/Container";
+import EamArchitecture from "@/components/sections/products/EamArchitecture";
+import EamCta from "@/components/sections/products/EamCta";
+import EamFaq from "@/components/sections/products/EamFaq";
+import EamGettingStarted from "@/components/sections/products/EamGettingStarted";
+import EamHero from "@/components/sections/products/EamHero";
+import EamHowItWorks from "@/components/sections/products/EamHowItWorks";
+import EamModules from "@/components/sections/products/EamModules";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { eamPageContent } from "@/lib/content/products/eam";
 import {
   getProductContent,
   productContentList,
@@ -13,6 +21,14 @@ import { buildMetadata } from "@/lib/seo/metadata";
 type ProductPageProps = {
   params: Promise<{ productSlug: string }>;
 };
+
+const eamKeywords = [
+  "enterprise asset management software",
+  "industrial maintenance software",
+  "preventive maintenance software",
+  "asset management software for manufacturing",
+  "tenant-safe EAM platform",
+];
 
 export function generateStaticParams() {
   return productContentList.map((product) => ({
@@ -24,6 +40,20 @@ export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
   const { productSlug } = await params;
+
+  if (productSlug === "eam") {
+    const metadata = buildMetadata({
+      title: eamPageContent.seo.title,
+      description: eamPageContent.seo.description,
+      path: `/products/${productSlug}`,
+    });
+
+    return {
+      ...metadata,
+      keywords: eamKeywords,
+    };
+  }
+
   const product = getProductContent(productSlug);
 
   if (!product) {
@@ -43,6 +73,58 @@ export async function generateMetadata({
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { productSlug } = await params;
+
+  if (productSlug === "eam") {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          name: "Procitec EAM",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web",
+          url: "https://procitec.io/products/eam",
+          description: eamPageContent.seo.description,
+          featureList: eamPageContent.modules.items.map((item) => item.title),
+          publisher: {
+            "@type": "Organization",
+            name: "Procitec",
+            url: "https://procitec.io",
+          },
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: eamPageContent.faq.items.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        },
+      ],
+    };
+
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+        <EamHero content={eamPageContent.hero} />
+        <EamArchitecture content={eamPageContent.architecture} />
+        <EamModules content={eamPageContent.modules} />
+        <EamHowItWorks content={eamPageContent.howItWorks} />
+        <EamGettingStarted content={eamPageContent.gettingStarted} />
+        <EamFaq content={eamPageContent.faq} />
+        <EamCta content={eamPageContent.cta} />
+      </>
+    );
+  }
+
   const product = getProductContent(productSlug);
 
   if (!product) {
