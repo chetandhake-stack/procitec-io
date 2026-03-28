@@ -8,6 +8,9 @@ import EamGettingStarted from "@/components/sections/products/EamGettingStarted"
 import EamHero from "@/components/sections/products/EamHero";
 import EamHowItWorks from "@/components/sections/products/EamHowItWorks";
 import EamModules from "@/components/sections/products/EamModules";
+import EamProblem from "@/components/sections/products/EamProblem";
+import EamTransformation from "@/components/sections/products/EamTransformation";
+import EamUseCases from "@/components/sections/products/EamUseCases";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -115,10 +118,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
           }}
         />
         <EamHero content={eamPageContent.hero} />
-        <EamArchitecture content={eamPageContent.architecture} />
-        <EamModules content={eamPageContent.modules} />
+        <EamProblem content={eamPageContent.problem} />
+        <EamTransformation content={eamPageContent.transformation} />
         <EamHowItWorks content={eamPageContent.howItWorks} />
-        <EamGettingStarted content={eamPageContent.gettingStarted} />
+        <EamModules content={eamPageContent.modules} />
+        <EamGettingStarted content={eamPageContent.fieldUse} />
+        <EamUseCases content={eamPageContent.useCases} />
+        <EamArchitecture content={eamPageContent.architecture} />
         <EamFaq content={eamPageContent.faq} />
         <EamCta content={eamPageContent.cta} />
       </>

@@ -25,6 +25,11 @@ It is NOT the corporate website (procitec.in).
 - Scalability
 - Secure multi-tenant architecture
 
+## Platform Page Role
+- Position the shared foundation behind Procitec applications
+- Explain why multiple products can scale on one controlled platform
+- Balance product clarity, operational value, and governance trust
+
 ## Design Philosophy
 - Clean
 - Technical

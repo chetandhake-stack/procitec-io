@@ -27,21 +27,21 @@ export default function EamArchitecture({ content }: EamArchitectureProps) {
           <Card className="bg-surface">
             <CardHeader className="space-y-3">
               <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-                Platform Fit
+                Buyer Confidence
               </p>
               <CardTitle className="text-2xl">
-                Built to separate governance from day-to-day maintenance work.
+                Built to keep daily operations usable while access stays controlled.
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="leading-6 text-text-secondary">
-                Buyers often need to confirm two things at once: that operating
-                teams get a usable workspace, and that the platform keeps access
-                boundaries clear.
+                Buyers often need to confirm two things at once: that plant teams
+                get a practical working system, and that access boundaries remain
+                clear as usage grows.
               </p>
               <p className="leading-6 text-text-secondary">
-                Procitec EAM is positioned to do both through clear public entry,
-                tenant-specific application spaces, and role-aware access
+                Procitec EAM is positioned to do both through a clear public
+                product layer, tenant-specific workspaces, and role-aware access
                 control.
               </p>
             </CardContent>

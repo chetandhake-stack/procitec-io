@@ -3,6 +3,11 @@ export type EamLink = {
   href: string;
 };
 
+export type EamComparisonItem = {
+  before: string;
+  after: string;
+};
+
 export type EamHeroHighlight = {
   title: string;
   description: string;
@@ -45,9 +50,19 @@ export interface EamPageContent {
     description: string;
     primaryCta: EamLink;
     secondaryCta: EamLink;
+    tertiaryCta: EamLink;
     highlights: EamHeroHighlight[];
+    previewTitle: string;
+    previewDescription: string;
+    previewItems: EamFeatureCard[];
   };
-  architecture: EamSection<EamFeatureCard>;
+  problem: EamSection<EamFeatureCard>;
+  transformation: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    items: EamComparisonItem[];
+  };
   modules: EamSection<EamFeatureCard>;
   howItWorks: {
     eyebrow: string;
@@ -55,7 +70,9 @@ export interface EamPageContent {
     description: string;
     steps: EamWorkflowStep[];
   };
-  gettingStarted: EamSection<EamFeatureCard>;
+  fieldUse: EamSection<EamFeatureCard>;
+  useCases: EamSection<EamFeatureCard>;
+  architecture: EamSection<EamFeatureCard>;
   faq: {
     eyebrow: string;
     title: string;
@@ -77,245 +94,436 @@ export const eamPageContent: EamPageContent = {
   seo: {
     title: "Enterprise Asset Management Software for Industrial Maintenance | Procitec EAM",
     description:
-      "Procitec EAM helps industrial teams manage assets, maintenance operations, preventive work, inspections, and tenant-safe access from one structured platform.",
+      "Procitec EAM helps industrial teams organize assets, plan preventive maintenance, manage work orders, and improve plant visibility through one structured platform.",
   },
   hero: {
     eyebrow: "Procitec EAM",
     headline:
-      "Enterprise asset management for industrial plants that need maintenance control, field visibility, and tenant-safe operations.",
+      "Reduce downtime with clearer asset visibility and structured maintenance control.",
     description:
-      "Procitec EAM helps maintenance and operations teams manage assets, work orders, preventive activity, inspections, and access control through one structured industrial platform.",
+      "Procitec EAM helps plant and maintenance teams organize assets, plan preventive work, manage execution, and keep daily operations visible in one industrial system.",
     primaryCta: {
-      label: "Open EAM",
-      href: "https://eam.procitec.io/",
-    },
-    secondaryCta: {
       label: "Book Demo",
       href: "/contact",
     },
+    secondaryCta: {
+      label: "See How It Works",
+      href: "#how-it-works",
+    },
+    tertiaryCta: {
+      label: "Open EAM",
+      href: "https://eam.procitec.io/",
+    },
     highlights: [
       {
-        title: "Reliability-focused workflows",
+        title: "Full asset visibility across plant areas and equipment",
         description:
-          "Track assets, maintenance work, inspections, and downtime from one operational view.",
+          "Keep asset structure, work history, and maintenance context easier to review.",
         icon: "manufacturing",
       },
       {
-        title: "Tenant-safe by design",
+        title: "Planned maintenance instead of reactive follow-up",
         description:
-          "Separate tenant workspaces, role-aware access, and controlled platform surfaces reduce cross-tenant risk.",
-        icon: "shield_lock",
+          "Use schedules, work orders, and inspections to move from memory-driven work to a system.",
+        icon: "event_repeat",
       },
       {
-        title: "Usable in plant and field contexts",
+        title: "Clear operational records for better maintenance decisions",
         description:
-          "Give teams a structured entry point for daily maintenance activity without exposing the full application manual on the public site.",
+          "Review downtime, follow-up activity, and equipment history with more confidence.",
+        icon: "analytics",
+      },
+    ],
+    previewTitle: "What buyers see in a demo",
+    previewDescription:
+      "A focused view of the structure and workflows maintenance teams use every day.",
+    previewItems: [
+      {
+        title: "Asset structure",
+        description:
+          "Plant, area, line, and machine records stay connected instead of scattered across separate files.",
+        icon: "account_tree",
+      },
+      {
+        title: "Work execution",
+        description:
+          "Preventive work, inspections, and assigned tasks move through one visible workflow.",
+        icon: "assignment",
+      },
+      {
+        title: "Operational review",
+        description:
+          "Downtime, history, and follow-up stay easier to review when activity is captured in one place.",
+        icon: "analytics",
+      },
+      {
+        title: "Field-ready use",
+        description:
+          "Mobile and PWA-oriented access support plant users who are not working from a desk.",
         icon: "phone_iphone",
       },
     ],
   },
-  architecture: {
-    eyebrow: "Platform Architecture",
+  problem: {
+    eyebrow: "Common Maintenance Problems",
     title:
-      "Platform architecture that keeps buyer clarity, administrative control, and daily operations properly separated.",
+      "When maintenance runs on memory, spreadsheets, and scattered records, downtime stays harder to control.",
     description:
-      "Procitec EAM combines a central product entry with tenant-specific workspaces so industrial teams can scale access without losing control, auditability, or operational clarity.",
+      "Industrial teams usually start looking for EAM when recurring problems become too visible to ignore.",
     items: [
       {
-        title: "Centralized product entry",
+        title: "Unplanned breakdowns disrupt production",
         description:
-          "Procitec.io explains the platform, while the live EAM application opens from one clear base-host entry point.",
-        icon: "desktop_windows",
+          "Teams do not always have one clear place to review equipment condition, downtime, and follow-up work.",
+        icon: "warning",
       },
       {
-        title: "Tenant subdomains",
+        title: "Maintenance depends on who remembers what comes next",
         description:
-          "Each tenant runs within its own application space so sites and business units can operate with clear separation.",
-        icon: "factory",
+          "Preventive work and routine checks drift when schedules live in disconnected sheets or personal follow-up.",
+        icon: "event_busy",
       },
       {
-        title: "Controlled roles and access",
+        title: "Asset history is incomplete or difficult to find",
         description:
-          "JWT-backed authentication and RBAC help align permissions with operational responsibilities.",
-        icon: "security",
+          "When records are fragmented, teams lose context on repairs, recurring issues, and operating history.",
+        icon: "history",
       },
       {
-        title: "Portal administration",
+        title: "Spare readiness is harder to judge",
         description:
-          "Platform governance stays separate from daily maintenance work so oversight does not crowd the operational workspace.",
-        icon: "admin_panel_settings",
+          "Parts are more likely to be overstocked, unavailable, or disconnected from the actual maintenance need.",
+        icon: "warehouse",
       },
       {
-        title: "Audit-oriented isolation",
+        title: "Downtime and follow-up stay difficult to review",
         description:
-          "Tenant-safe boundaries, role visibility, and structured access flows support reviews, accountability, and buyer confidence.",
-        icon: "shield_lock",
+          "Operational decisions slow down when interruptions, inspections, and corrective work are not visible together.",
+        icon: "analytics",
+      },
+    ],
+  },
+  transformation: {
+    eyebrow: "From Reactive To Structured",
+    title: "What changes when assets, work, and history live in one system.",
+    description:
+      "Procitec EAM helps replace fragmented maintenance tracking with a more controlled operating model.",
+    items: [
+      {
+        before: "Reactive maintenance with limited planning",
+        after: "Planned preventive work with clearer schedules and follow-up",
+      },
+      {
+        before: "Scattered asset records across multiple tools",
+        after: "Structured asset hierarchy with connected operational history",
+      },
+      {
+        before: "Manual task follow-up with weak accountability",
+        after: "Visible work execution through assigned and reviewable work orders",
+      },
+      {
+        before: "Unclear downtime patterns and delayed response",
+        after: "More usable visibility into interruptions, inspections, and next actions",
+      },
+      {
+        before: "Decisions based on incomplete maintenance context",
+        after: "Better operational review through records, trends, and audit visibility",
       },
     ],
   },
   modules: {
-    eyebrow: "Core Modules",
-    title: "Operational coverage that buyers can scan quickly and evaluate with confidence.",
+    eyebrow: "Core Capabilities",
+    title:
+      "Everything teams need to move from fragmented maintenance tracking to a structured system.",
     description:
-      "The EAM platform is organized around the day-to-day objects and workflows maintenance teams already manage, not around generic software language.",
+      "Procitec EAM is organized around the operational workflows plant and maintenance teams already manage every day.",
     items: [
       {
-        title: "Assets",
+        title: "Asset Management",
         description:
-          "Maintain structured asset records, status context, and ownership details in one place.",
+          "Organize equipment records, status context, and maintenance history so teams know what they are working on.",
         icon: "inventory_2",
+        points: [
+          "Structured asset hierarchy",
+          "Lifecycle and status context",
+          "Connected maintenance history",
+        ],
       },
       {
         title: "Work Orders",
         description:
-          "Plan, assign, and track maintenance activity with clearer execution visibility.",
+          "Assign, track, and review maintenance activity with clearer ownership and follow-up visibility.",
         icon: "assignment",
+        points: [
+          "Task assignment and progress tracking",
+          "Clearer accountability",
+          "Reviewable execution history",
+        ],
       },
       {
         title: "Preventive Maintenance",
         description:
-          "Set recurring plans and scheduled work so preventive activity does not depend on memory or spreadsheets.",
+          "Schedule recurring maintenance so routine work does not depend on memory or manual reminders.",
         icon: "event_repeat",
+        points: [
+          "Planned maintenance schedules",
+          "Routine task coverage",
+          "Reduced dependence on spreadsheets",
+        ],
       },
       {
-        title: "Inspections",
+        title: "Inspections And Routines",
         description:
-          "Capture routine inspections and standard checks as part of the operational workflow.",
+          "Capture standard checks and recurring observations as part of the daily operational flow.",
         icon: "checklist",
+        points: [
+          "Standardized checks",
+          "Digital inspection records",
+          "Earlier issue visibility",
+        ],
       },
       {
-        title: "Downtime Events",
+        title: "Downtime Visibility",
         description:
-          "Record interruptions, review patterns, and connect downtime visibility to asset follow-up.",
+          "Record interruptions and connect them to asset follow-up so recurring issues are easier to review.",
         icon: "history",
+        points: [
+          "Downtime event tracking",
+          "Pattern review",
+          "Connected corrective follow-up",
+        ],
       },
       {
         title: "Spare Parts",
         description:
-          "Support maintenance readiness with clearer spare-part tracking and use context.",
+          "Support maintenance readiness by keeping spare use and availability easier to track in context.",
         icon: "warehouse",
+        points: [
+          "Spare reference visibility",
+          "Maintenance readiness support",
+          "Better link between work and parts use",
+        ],
       },
       {
         title: "Audit Visibility",
         description:
-          "Keep role-aware history and structured records available for reviews and accountability.",
+          "Keep operational records easier to review so teams can support accountability and follow-up discussions.",
         icon: "shield_lock",
+        points: [
+          "Role-aware record visibility",
+          "Structured operational history",
+          "Support for review and accountability",
+        ],
       },
       {
-        title: "Analytics Baselines",
+        title: "Reporting Baselines",
         description:
-          "Review maintenance and asset signals through baseline reporting that supports better decisions.",
+          "Use maintenance and asset records to build a clearer operational view for decisions and next actions.",
         icon: "analytics",
+        points: [
+          "Maintenance activity review",
+          "Trend-oriented visibility",
+          "Baseline reporting support",
+        ],
       },
     ],
   },
   howItWorks: {
     eyebrow: "How It Works",
-    title: "A simple flow from platform setup to operational review.",
+    title: "A practical workflow from asset setup to maintenance review.",
     description:
-      "The public product page should make the system understandable quickly: how access is provisioned, how work is run, and how visibility is reviewed.",
+      "The system should feel understandable quickly: how assets are organized, how work is executed, and how teams review what happened.",
     steps: [
       {
-        title: "Provision",
+        title: "Register Assets",
         description:
-          "Set up the tenant workspace, base structure, and role access so teams start from a controlled operating context.",
-        icon: "admin_panel_settings",
+          "Capture equipment records with the operational details teams need to maintain and review them properly.",
+        icon: "inventory_2",
       },
       {
-        title: "Operate",
+        title: "Build Asset Hierarchy",
         description:
-          "Manage assets, work orders, preventive plans, inspections, and daily maintenance activity inside the tenant workspace.",
-        icon: "work",
+          "Organize plant, area, line, and machine context so teams can orient themselves faster.",
+        icon: "account_tree",
       },
       {
-        title: "Review",
+        title: "Plan Maintenance",
         description:
-          "Use reporting, audit visibility, and operational history to monitor performance and support follow-up decisions.",
+          "Set preventive work, routines, and recurring checks so maintenance is less dependent on memory.",
+        icon: "event_repeat",
+      },
+      {
+        title: "Execute Work Orders",
+        description:
+          "Assign tasks, track progress, and keep execution visible while work is being completed.",
+        icon: "assignment",
+      },
+      {
+        title: "Capture Inspections And Updates",
+        description:
+          "Keep routine checks, field observations, and follow-up records inside the same operating workflow.",
+        icon: "checklist",
+      },
+      {
+        title: "Review Downtime And Trends",
+        description:
+          "Use downtime records, maintenance history, and baseline reporting to support better next actions.",
         icon: "analytics",
       },
     ],
   },
-  gettingStarted: {
-    eyebrow: "Using Procitec EAM",
-    title: "A concise view of how teams enter the system, work daily, and stay productive in the field.",
+  fieldUse: {
+    eyebrow: "Field And Daily Use",
+    title: "Built for daily plant work, not just office review.",
     description:
-      "This section gives buyers a practical sense of daily usage without turning the public page into a full training guide.",
+      "Procitec EAM is positioned for practical use by maintenance and operations teams who need fast orientation and low-friction access.",
     items: [
       {
-        title: "Getting Started",
+        title: "Mobile-Ready Access",
         description:
-          "Users enter through the EAM login, land in their tenant workspace, and work inside the right site and operational context.",
-        icon: "login",
-        points: [
-          "Clear application entry from the public product page",
-          "Tenant-specific workspace after sign-in",
-          "Site-aware structure for faster orientation",
-        ],
-      },
-      {
-        title: "Daily Operations",
-        description:
-          "Teams move through assets, work orders, preventive work, and inspections with one connected operational model.",
-        icon: "manufacturing",
-        points: [
-          "Asset records and maintenance history stay connected",
-          "Planned and routine work is easier to review",
-          "Inspection and downtime activity remain visible",
-        ],
-      },
-      {
-        title: "Field Access",
-        description:
-          "Procitec EAM is designed to support practical mobile and PWA-based access so work does not stop at the desk.",
+          "Give plant users access to the system without assuming they are always working from a desktop workstation.",
         icon: "phone_iphone",
         points: [
-          "Mobile-ready application access",
-          "PWA install path for repeat daily use",
-          "Useful for technicians and site users working in motion",
+          "Useful for supervisors and technicians moving across the site",
+          "Designed to stay usable in active plant environments",
+          "Supports day-to-day follow-up outside the office",
         ],
+      },
+      {
+        title: "PWA Repeat-Use Path",
+        description:
+          "Support repeat daily use with a practical application entry that keeps the workflow close at hand.",
+        icon: "install_mobile",
+        points: [
+          "Practical for recurring maintenance activity",
+          "Keeps daily tasks closer to the user workflow",
+          "Fits teams that need quick access more than deep training",
+        ],
+      },
+      {
+        title: "Clear Daily Workflow",
+        description:
+          "Assets, work orders, inspections, and follow-up records stay connected so teams can move through work with less friction.",
+        icon: "manufacturing",
+        points: [
+          "Less switching between disconnected records",
+          "Easier review of what was done and what is pending",
+          "Better continuity between plant work and management review",
+        ],
+      },
+    ],
+  },
+  useCases: {
+    eyebrow: "Use Cases",
+    title: "Designed for industrial assets that teams need to maintain, inspect, and review consistently.",
+    description:
+      "Procitec EAM is better positioned when buyers can see their environment reflected in the page, not just generic software language.",
+    items: [
+      {
+        title: "Electrical Panels And Switchboards",
+        description:
+          "Keep equipment structure, maintenance routines, and follow-up activity visible for critical electrical assets.",
+        icon: "electrical_services",
+      },
+      {
+        title: "Transformers And Power Systems",
+        description:
+          "Support maintenance review and operating history for assets where downtime and condition matter closely.",
+        icon: "bolt",
+      },
+      {
+        title: "CNC And Production Machines",
+        description:
+          "Track equipment history, planned work, and interruptions for production-critical machines.",
+        icon: "precision_manufacturing",
+      },
+      {
+        title: "Utilities And Facility Equipment",
+        description:
+          "Bring site services and shared facility assets into the same structured maintenance system.",
+        icon: "business",
+      },
+    ],
+  },
+  architecture: {
+    eyebrow: "Control And Visibility",
+    title:
+      "Operational clarity with access boundaries that stay controlled as teams grow.",
+    description:
+      "Procitec EAM keeps public product communication, tenant workspaces, and role-aware access properly separated.",
+    items: [
+      {
+        title: "Centralized product entry",
+        description:
+          "Procitec.io explains the product clearly while the live application remains a distinct operational workspace.",
+        icon: "desktop_windows",
+      },
+      {
+        title: "Tenant workspaces",
+        description:
+          "Each tenant can operate in its own application space so sites or business units stay clearly separated.",
+        icon: "factory",
+      },
+      {
+        title: "Role-aware access",
+        description:
+          "RBAC-oriented access helps align permissions with operational responsibility instead of exposing everything to everyone.",
+        icon: "security",
+      },
+      {
+        title: "Administrative oversight",
+        description:
+          "Governance stays separate from daily maintenance work so platform oversight does not crowd the operational view.",
+        icon: "admin_panel_settings",
+      },
+      {
+        title: "Audit-oriented records",
+        description:
+          "Structured operational history helps support review, accountability, and buyer confidence.",
+        icon: "shield_lock",
       },
     ],
   },
   faq: {
     eyebrow: "FAQ",
-    title: "Common questions buyers ask before opening the application or booking a demo.",
+    title: "Common questions buyers ask before evaluating fit or booking a demo.",
     description:
       "Short answers improve scan speed for human readers and make the product easier for search engines and AI systems to interpret accurately.",
     items: [
       {
-        question: "What is the difference between the main domain and a tenant subdomain?",
+        question: "What types of assets is Procitec EAM suited for?",
         answer:
-          "Procitec.io is the public product platform. Tenant subdomains are the application workspaces where authorized teams use Procitec EAM inside their own isolated environment.",
+          "Procitec EAM is positioned for industrial equipment and facility assets that need structured records, maintenance planning, inspections, and operational review.",
       },
       {
-        question: "Which modules are available in Procitec EAM?",
+        question: "How does preventive maintenance work in Procitec EAM?",
         answer:
-          "The current public scope covers assets, work orders, preventive maintenance plans, inspections, downtime events, spare parts, audit visibility, and baseline analytics.",
+          "Teams can organize recurring plans, scheduled work, and routine checks so preventive activity is easier to plan, assign, and review in one system.",
       },
       {
-        question: "Does Procitec EAM support mobile use?",
+        question: "Can plant teams use Procitec EAM on mobile devices?",
         answer:
-          "Yes. The product is intended to support mobile access and a practical PWA-style entry for field and plant users who need quick operational visibility.",
+          "Yes. Procitec EAM is intended to support mobile access together with a practical PWA-style entry path for repeat daily use in plant and field contexts.",
       },
       {
-        question: "How does Procitec EAM handle multi-tenant and role-aware access?",
+        question: "How does Procitec EAM keep access controlled across teams or sites?",
         answer:
-          "The platform uses tenant-specific workspaces together with controlled authentication and RBAC so access can be aligned with responsibility and tenant boundaries.",
+          "The platform uses tenant-specific workspaces together with role-aware access control so visibility can stay aligned with responsibility and tenant boundaries.",
       },
       {
-        question: "Can Procitec help with onboarding and product evaluation?",
+        question: "Can Procitec support product evaluation and rollout planning?",
         answer:
-          "Yes. Buyers can book a demo, talk to an expert, or open the application entry point depending on whether they are evaluating, onboarding, or returning to work.",
+          "Yes. Buyers can book a demo, discuss rollout priorities, and review how the product would fit their plant structure and maintenance workflow.",
       },
     ],
   },
   cta: {
     eyebrow: "Next Step",
-    title: "Review the product with Procitec, discuss your rollout, or go directly into the application.",
+    title: "Bring your asset records, maintenance work, and operational follow-up into one clearer system.",
     description:
-      "Choose the action that fits your stage: product review, implementation discussion, or direct application access.",
+      "Review fit with your plant, discuss rollout priorities, and see how Procitec EAM can support day-to-day maintenance control.",
     trustLine:
-      "Built for industrial teams that need reliability, clear access boundaries, and practical maintenance visibility.",
+      "Built for industrial teams that need structured maintenance workflows, field-ready access, and controlled visibility.",
     primaryCta: {
       label: "Book Demo",
       href: "/contact",

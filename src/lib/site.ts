@@ -18,6 +18,6 @@ export const siteConfig = {
     href: "/applications",
   },
   contact: {
-    email: "hello@procitec.in",
+    email: "connect@procitec.in",
   },
 } as const;

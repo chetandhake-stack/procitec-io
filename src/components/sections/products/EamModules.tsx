@@ -40,13 +40,23 @@ export default function EamModules({ content }: EamModulesProps) {
                     </span>
                   ) : null}
                   <p className="text-xs font-semibold uppercase tracking-widest text-text-muted">
-                    Module
+                    Capability
                   </p>
                 </div>
                 <CardTitle className="text-lg">{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="leading-6 text-text-secondary">{item.description}</p>
+                {item.points ? (
+                  <ul className="mt-4 space-y-2">
+                    {item.points.map((point) => (
+                      <li key={point} className="flex items-start gap-3">
+                        <span className="mt-2 inline-flex h-2 w-2 rounded-full bg-primary" />
+                        <span className="leading-6 text-text-secondary">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </CardContent>
             </Card>
           ))}

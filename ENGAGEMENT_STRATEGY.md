@@ -74,22 +74,23 @@ Each card must include:
 Example:
 
 Problem:
-Unplanned downtime reduces visibility.
+Maintenance planning is fragmented and asset history is hard to review.
 
 Solution:
-Procitec EAM provides real-time asset monitoring.
+Procitec EAM organizes assets, preventive work, and execution history in one structured system.
 
 Outcome:
-Reduced downtime and improved efficiency.
+Clearer maintenance control and better operational follow-up.
 
 ---
 
 ### 5. “How It Works”
 Step flow:
-1. Connect assets
-2. Monitor data
-3. Analyze insights
-4. Take action
+1. Register assets
+2. Build hierarchy
+3. Plan maintenance
+4. Execute work orders
+5. Review downtime and follow-up
 
 ---
 

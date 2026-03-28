@@ -9,14 +9,14 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import type { EamPageContent } from "@/lib/content/products/eam";
 
 type EamGettingStartedProps = {
-  content: EamPageContent["gettingStarted"];
+  content: EamPageContent["fieldUse"];
 };
 
 export default function EamGettingStarted({ content }: EamGettingStartedProps) {
   return (
     <section
-      className="border-y border-border bg-surface py-16 sm:py-20"
-      id="getting-started"
+      className="py-16 sm:py-20"
+      id="field-use"
     >
       <Container className="space-y-10">
         <SectionHeader

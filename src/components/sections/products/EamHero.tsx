@@ -37,6 +37,14 @@ export default function EamHero({ content }: EamHeroProps) {
             >
               {content.secondaryCta.label}
             </Button>
+            <Button
+              href={content.tertiaryCta.href}
+              variant="ghost"
+              size="lg"
+              className="w-full sm:w-auto"
+            >
+              {content.tertiaryCta.label}
+            </Button>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-3">
@@ -66,33 +74,36 @@ export default function EamHero({ content }: EamHeroProps) {
         <Card className="border-primary/10 bg-background p-0">
           <div className="border-b border-border px-6 py-5">
             <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-              Why Buyers Use Procitec EAM
+              {content.previewTitle}
             </p>
             <h2 className="mt-3 text-2xl font-semibold leading-tight text-text-primary">
-              Structured access, operational coverage, and plant-ready usability.
+              Structured workflows that feel easier to evaluate quickly.
             </h2>
+            <p className="mt-3 text-sm leading-6 text-text-secondary">
+              {content.previewDescription}
+            </p>
           </div>
           <div className="space-y-0">
-            {content.highlights.map((highlight, index) => (
+            {content.previewItems.map((item, index) => (
               <div
-                key={highlight.title}
+                key={item.title}
                 className={[
                   "px-6 py-5",
-                  index !== content.highlights.length - 1 ? "border-b border-border" : "",
+                  index !== content.previewItems.length - 1 ? "border-b border-border" : "",
                 ].join(" ")}
               >
                 <div className="flex items-start gap-3">
-                  {highlight.icon ? (
+                  {item.icon ? (
                     <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                      <MaterialSymbol name={highlight.icon} />
+                      <MaterialSymbol name={item.icon} />
                     </span>
                   ) : null}
                   <p className="pt-1 text-base font-semibold text-text-primary">
-                    {highlight.title}
+                    {item.title}
                   </p>
                 </div>
                 <p className="mt-2 text-sm leading-6 text-text-secondary">
-                  {highlight.description}
+                  {item.description}
                 </p>
               </div>
             ))}
