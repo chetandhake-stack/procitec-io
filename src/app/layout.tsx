@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   description:
     "Procitec.io is the product platform for industrial applications such as EAM and EMS.",
   icons: {
-    icon: siteConfig.logo.src,
-    shortcut: siteConfig.logo.src,
-    apple: siteConfig.logo.src,
+    icon: [{ url: siteConfig.logo.src, type: "image/svg+xml" }],
+    shortcut: [{ url: siteConfig.logo.src, type: "image/svg+xml" }],
+    apple: [{ url: siteConfig.logo.src, type: "image/svg+xml" }],
   },
   openGraph: {
     title: "Procitec.io",

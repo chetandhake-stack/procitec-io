@@ -30,7 +30,7 @@ export function Header() {
               />
             </span>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-text-primary">{siteConfig.name}</p>
+              <p className="text-sm font-bold text-text-primary">{siteConfig.shortName}</p>
               <p className="hidden text-xs text-text-secondary sm:block">
                 Industrial Applications Platform
               </p>

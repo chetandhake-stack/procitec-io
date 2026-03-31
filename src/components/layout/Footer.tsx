@@ -21,7 +21,7 @@ export function Footer() {
                 />
               </span>
               <div>
-                <p className="text-sm font-semibold text-text-primary">{siteConfig.name}</p>
+                <p className="text-sm font-bold text-text-primary">{siteConfig.shortName}</p>
                 <p className="text-xs text-text-secondary">
                   Product platform for Procitec applications
                 </p>
