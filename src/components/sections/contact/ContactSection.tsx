@@ -29,7 +29,7 @@ export default function ContactSection() {
             <p className="text-sm font-semibold text-text-primary">Typical conversations</p>
             <ul className="space-y-2 text-sm leading-6 text-text-secondary">
               <li>Application overview and product fit</li>
-              <li>Demo planning for EAM and future EMS rollout</li>
+              <li>Demo planning for EAM, IBM, and future EMS rollout</li>
               <li>Multi-site industrial deployment discussions</li>
             </ul>
           </div>

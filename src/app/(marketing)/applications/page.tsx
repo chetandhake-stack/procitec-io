@@ -29,7 +29,7 @@ export default function ApplicationsPage() {
           description="Each product page is structured for clarity, fast scanning, and practical next steps."
         />
 
-        <div className="grid gap-4 lg:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {productContentList.map((product) => (
             <Card key={product.slug} className="flex h-full flex-col">
               <CardHeader>

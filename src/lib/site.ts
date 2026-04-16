@@ -6,7 +6,7 @@ export const siteConfig = {
     alt: "Procitec logo",
   },
   description:
-    "Product platform website for Procitec applications including EAM, EMS, and future industrial software products.",
+    "Product platform website for Procitec applications including EAM, EMS, IBM, and future industrial software products.",
   url: "https://procitec.io",
   corporateUrl: "https://procitec.in",
   primaryCta: {

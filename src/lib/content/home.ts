@@ -30,7 +30,7 @@ export const rolePaths = [
 ] as const;
 
 export const heroHighlights = [
-  "Product-focused website structure built for EAM, EMS, and future applications.",
+  "Product-focused website structure built for EAM, EMS, IBM, and future applications.",
   "Industrial messaging that explains the problem, the solution, and the next action quickly.",
   "Mobile-first content flow so decision-makers can understand and act within seconds.",
 ] as const;

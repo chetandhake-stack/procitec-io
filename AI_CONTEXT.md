@@ -10,6 +10,7 @@ It is NOT the corporate website (procitec.in).
 ## Applications
 - EAM (Enterprise Asset Management)
 - EMS (Energy Management System)
+- IBM (Installed Base Manager)
 - Future industrial software products
 
 ## Audience

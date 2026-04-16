@@ -11,10 +11,17 @@ import EamModules from "@/components/sections/products/EamModules";
 import EamProblem from "@/components/sections/products/EamProblem";
 import EamTransformation from "@/components/sections/products/EamTransformation";
 import EamUseCases from "@/components/sections/products/EamUseCases";
+import IbmBenefits from "@/components/sections/products/IbmBenefits";
+import IbmCta from "@/components/sections/products/IbmCta";
+import IbmDigitization from "@/components/sections/products/IbmDigitization";
+import IbmFaq from "@/components/sections/products/IbmFaq";
+import IbmHero from "@/components/sections/products/IbmHero";
+import IbmImpact from "@/components/sections/products/IbmImpact";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { eamPageContent } from "@/lib/content/products/eam";
+import { ibmPageContent } from "@/lib/content/products/ibm";
 import {
   getProductContent,
   productContentList,
@@ -31,6 +38,14 @@ const eamKeywords = [
   "preventive maintenance software",
   "asset management software for manufacturing",
   "tenant-safe EAM platform",
+];
+
+const ibmKeywords = [
+  "installed base management software",
+  "industrial installed base manager",
+  "OEM service lifecycle software",
+  "installed equipment visibility platform",
+  "customer asset lifecycle intelligence",
 ];
 
 export function generateStaticParams() {
@@ -54,6 +69,19 @@ export async function generateMetadata({
     return {
       ...metadata,
       keywords: eamKeywords,
+    };
+  }
+
+  if (productSlug === "ibm") {
+    const metadata = buildMetadata({
+      title: ibmPageContent.seo.title,
+      description: ibmPageContent.seo.description,
+      path: `/products/${productSlug}`,
+    });
+
+    return {
+      ...metadata,
+      keywords: ibmKeywords,
     };
   }
 
@@ -127,6 +155,61 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <EamArchitecture content={eamPageContent.architecture} />
         <EamFaq content={eamPageContent.faq} />
         <EamCta content={eamPageContent.cta} />
+      </>
+    );
+  }
+
+  if (productSlug === "ibm") {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          name: "Procitec IBM",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web",
+          url: "https://procitec.io/products/ibm",
+          description: ibmPageContent.seo.description,
+          featureList: [
+            "Installed-base digitization",
+            "Service lifecycle visibility",
+            "Customer and site visibility",
+            "Upgrade and modernization intelligence",
+          ],
+          publisher: {
+            "@type": "Organization",
+            name: "Procitec",
+            url: "https://procitec.io",
+          },
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: ibmPageContent.faq.items.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        },
+      ],
+    };
+
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+        <IbmHero content={ibmPageContent.hero} />
+        <IbmBenefits content={ibmPageContent.userBenefits} />
+        <IbmDigitization content={ibmPageContent.digitization} />
+        <IbmImpact content={ibmPageContent.impact} />
+        <IbmFaq content={ibmPageContent.faq} />
+        <IbmCta content={ibmPageContent.cta} />
       </>
     );
   }

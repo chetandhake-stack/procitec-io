@@ -131,6 +131,106 @@ export const productContentBySlug: Record<string, ProductContent> = {
       },
     ],
   },
+  ibm: {
+    slug: "ibm",
+    name: "IBM",
+    eyebrow: "Installed Base Manager",
+    status: "Coming Soon",
+    summary:
+      "Installed-base intelligence for industrial equipment providers that need stronger service visibility, customer continuity, and long-term lifecycle control.",
+    description:
+      "Procitec IBM is planned to help OEMs, service teams, and industrial account owners digitize installed equipment records, track lifecycle status, coordinate service follow-up, and identify upgrade opportunities in one structured application.",
+    keyBenefit:
+      "Turn scattered customer asset records into a structured installed-base system for better service response, stronger customer relationships, and scalable lifecycle growth.",
+    audience: [
+      "Aftermarket service leaders",
+      "OEM operations teams",
+      "Account and service managers",
+      "Customer success and support teams",
+      "Industrial equipment providers",
+    ],
+    benefits: [
+      "Digitize installed equipment, customer sites, and service history in one structured record system",
+      "Improve response quality by giving support and service teams a clearer view of what is installed and what has happened before",
+      "Strengthen customer satisfaction through faster follow-up, better continuity, and more informed service conversations",
+      "Reduce dependence on scattered spreadsheets, personal memory, and disconnected account files",
+      "Create better visibility for renewals, retrofit planning, and lifecycle upgrade opportunities",
+      "Build a stronger long-term installed-base foundation for service growth and commercial planning",
+    ],
+    capabilities: [
+      {
+        title: "Installed-base digitization",
+        description:
+          "Convert scattered installed equipment records into a structured digital system with customer, site, and configuration context.",
+      },
+      {
+        title: "Customer and site visibility",
+        description:
+          "Maintain a clearer view of where equipment is installed, who owns it, and what commercial or service relationship surrounds it.",
+      },
+      {
+        title: "Service lifecycle visibility",
+        description:
+          "Track maintenance status, service coverage, support follow-up, and open lifecycle actions across the installed base.",
+      },
+      {
+        title: "Upgrade and modernization intelligence",
+        description:
+          "Identify equipment groups that may need retrofit, replacement, modernization, or deeper customer engagement over time.",
+      },
+      {
+        title: "Cross-team coordination",
+        description:
+          "Give service, sales, operations, and account teams one shared view of what is installed, what needs attention, and where opportunity exists.",
+      },
+    ],
+    industries: [
+      "Industrial OEMs",
+      "Aftermarket service organizations",
+      "Equipment manufacturers",
+      "Multi-site industrial service providers",
+    ],
+    primaryCta: {
+      label: "Book Demo",
+      href: "/contact",
+    },
+    secondaryCta: {
+      label: "Explore Platform",
+      href: "/platform",
+    },
+    seo: {
+      title: "Installed Base Management Software for Industrial Equipment Providers",
+      description:
+        "Explore the Procitec IBM direction for installed-base visibility, service coordination, lifecycle tracking, and industrial customer asset intelligence.",
+    },
+    faq: [
+      {
+        question: "What is Procitec IBM designed to manage?",
+        answer:
+          "Procitec IBM is intended to manage the installed base of industrial equipment across customers, sites, service contracts, and lifecycle relationships in one structured view.",
+      },
+      {
+        question: "Who is Procitec IBM for?",
+        answer:
+          "It is suited to OEMs, aftermarket service teams, account owners, and customer-facing operations teams that need better visibility into installed assets, service status, and lifecycle follow-up.",
+      },
+      {
+        question: "How does Procitec IBM support digitization?",
+        answer:
+          "It is intended to replace fragmented spreadsheets and disconnected installed-equipment lists with a structured digital record of customers, sites, equipment, and service history.",
+      },
+      {
+        question: "How can Procitec IBM improve customer satisfaction?",
+        answer:
+          "With better installed-base visibility, teams can respond faster, avoid repeated information gaps, and give customers more confident service and support conversations.",
+      },
+      {
+        question: "What is the long-term value of Procitec IBM?",
+        answer:
+          "Over time, Procitec IBM is intended to create a stronger installed-base foundation for service growth, modernization planning, commercial follow-up, and more durable customer relationships.",
+      },
+    ],
+  },
 };
 
 export const productContentList = Object.values(productContentBySlug);

@@ -155,12 +155,12 @@ const platformProducts: PlatformProduct[] = [
     icon: "analytics",
   },
   {
-    title: "Future applications",
+    title: "IBM",
     description:
-      "Additional industrial products can extend the same access, navigation, and governance model instead of starting from zero.",
-    href: "/applications",
-    cta: "View Applications",
-    icon: "work",
+      "Installed base visibility, service follow-up, and lifecycle coordination for industrial equipment providers on the same Procitec platform.",
+    href: "/products/ibm",
+    cta: "Explore IBM",
+    icon: "inventory_2",
   },
 ];
 
