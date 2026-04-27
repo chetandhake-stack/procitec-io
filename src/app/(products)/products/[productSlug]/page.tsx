@@ -55,6 +55,7 @@ const ibmKeywords = [
 ];
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? siteConfig.url;
+const canonicalSiteUrl = (path: string): string => new URL(path, siteUrl).toString();
 
 const dashflowKeywords = [
   "dashboard tv rotation tool",
@@ -160,13 +161,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
           name: "Procitec EAM",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web",
-          url: "https://procitec.io/products/eam",
+          url: canonicalSiteUrl("/products/eam"),
           description: eamPageContent.seo.description,
           featureList: eamPageContent.modules.items.map((item) => item.title),
           publisher: {
             "@type": "Organization",
             name: "Procitec",
-            url: "https://procitec.io",
+            url: canonicalSiteUrl("/"),
           },
         },
         {
@@ -214,7 +215,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           name: "Procitec IBM",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web",
-          url: "https://procitec.io/products/ibm",
+          url: canonicalSiteUrl("/products/ibm"),
           description: ibmPageContent.seo.description,
           featureList: [
             "Installed-base digitization",
@@ -225,7 +226,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           publisher: {
             "@type": "Organization",
             name: "Procitec",
-            url: "https://procitec.io",
+            url: canonicalSiteUrl("/"),
           },
         },
         {
@@ -269,7 +270,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           name: "Procitec DashFlow",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Chrome Extension",
-          url: "https://procitec.io/products/dashflow",
+          url: canonicalSiteUrl("/products/dashflow"),
           description: dashflowPageContent.seo.description,
           featureList: [
             "Automated dashboard rotation",
@@ -281,7 +282,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           publisher: {
             "@type": "Organization",
             name: "Procitec",
-            url: "https://procitec.io",
+            url: canonicalSiteUrl("/"),
           },
         },
         {
