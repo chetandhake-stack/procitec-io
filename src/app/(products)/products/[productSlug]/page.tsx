@@ -108,7 +108,7 @@ export async function generateMetadata({
       description: dashflowPageContent.seo.description,
       path: `/products/${productSlug}`,
     });
-    const imageUrl = new URL("/dashflow-hero.png", siteUrl).toString();
+    const imageUrl = new URL("/dashflow-og.jpg", siteUrl).toString();
 
     return {
       ...metadata,
@@ -120,8 +120,8 @@ export async function generateMetadata({
             url: imageUrl,
             alt: dashflowPageContent.hero.imageAlt,
             width: 1200,
-            height: 675,
-            type: "image/png",
+            height: 630,
+            type: "image/jpeg",
           },
         ],
       },
