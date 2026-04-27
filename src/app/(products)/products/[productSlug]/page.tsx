@@ -54,6 +54,8 @@ const ibmKeywords = [
   "customer asset lifecycle intelligence",
 ];
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? siteConfig.url;
+
 const dashflowKeywords = [
   "dashboard tv rotation tool",
   "iot dashboard automation",
@@ -105,7 +107,7 @@ export async function generateMetadata({
       description: dashflowPageContent.seo.description,
       path: `/products/${productSlug}`,
     });
-    const imageUrl = new URL("/dashflow-hero.png", siteConfig.url).toString();
+    const imageUrl = new URL("/dashflow-hero.png", siteUrl).toString();
 
     return {
       ...metadata,
@@ -116,6 +118,9 @@ export async function generateMetadata({
           {
             url: imageUrl,
             alt: dashflowPageContent.hero.imageAlt,
+            width: 1200,
+            height: 675,
+            type: "image/png",
           },
         ],
       },
