@@ -16,6 +16,7 @@ Present Procitec applications clearly and professionally, and direct users to:
 - EAM: https://eam.procitec.io/
 - EMS: https://ems.procitec.io/ (planned)
 - IBM: Procitec Installed Base Manager (planned)
+- DashFlow: Automated IoT dashboard TV display tool
 
 ## Audience
 - Industrial buyers
@@ -46,6 +47,6 @@ Present Procitec applications clearly and professionally, and direct users to:
 - Hero
 - Applications overview
 - Why Procitec Applications
-- Product cards (EAM, EMS, IBM)
+- Product cards (EAM, EMS, IBM, DashFlow)
 - CTA section
 - Footer

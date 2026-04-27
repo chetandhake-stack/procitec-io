@@ -11,6 +11,10 @@ import EamModules from "@/components/sections/products/EamModules";
 import EamProblem from "@/components/sections/products/EamProblem";
 import EamTransformation from "@/components/sections/products/EamTransformation";
 import EamUseCases from "@/components/sections/products/EamUseCases";
+import DashFlowCta from "@/components/sections/products/DashFlowCta";
+import DashFlowFaq from "@/components/sections/products/DashFlowFaq";
+import DashFlowFeatureGrid from "@/components/sections/products/DashFlowFeatureGrid";
+import DashFlowHero from "@/components/sections/products/DashFlowHero";
 import IbmBenefits from "@/components/sections/products/IbmBenefits";
 import IbmCta from "@/components/sections/products/IbmCta";
 import IbmDigitization from "@/components/sections/products/IbmDigitization";
@@ -20,8 +24,10 @@ import IbmImpact from "@/components/sections/products/IbmImpact";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { dashflowPageContent } from "@/lib/content/products/dashflow";
 import { eamPageContent } from "@/lib/content/products/eam";
 import { ibmPageContent } from "@/lib/content/products/ibm";
+import { siteConfig } from "@/lib/site";
 import {
   getProductContent,
   productContentList,
@@ -46,6 +52,14 @@ const ibmKeywords = [
   "OEM service lifecycle software",
   "installed equipment visibility platform",
   "customer asset lifecycle intelligence",
+];
+
+const dashflowKeywords = [
+  "dashboard tv rotation tool",
+  "iot dashboard automation",
+  "fullscreen dashboard display software",
+  "control room dashboard rotation",
+  "plant kpi tv display",
 ];
 
 export function generateStaticParams() {
@@ -82,6 +96,33 @@ export async function generateMetadata({
     return {
       ...metadata,
       keywords: ibmKeywords,
+    };
+  }
+
+  if (productSlug === "dashflow") {
+    const metadata = buildMetadata({
+      title: dashflowPageContent.seo.title,
+      description: dashflowPageContent.seo.description,
+      path: `/products/${productSlug}`,
+    });
+    const imageUrl = new URL("/dashflow-hero.png", siteConfig.url).toString();
+
+    return {
+      ...metadata,
+      keywords: dashflowKeywords,
+      openGraph: {
+        ...metadata.openGraph,
+        images: [
+          {
+            url: imageUrl,
+            alt: dashflowPageContent.hero.imageAlt,
+          },
+        ],
+      },
+      twitter: {
+        ...metadata.twitter,
+        images: [imageUrl],
+      },
     };
   }
 
@@ -210,6 +251,66 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <IbmImpact content={ibmPageContent.impact} />
         <IbmFaq content={ibmPageContent.faq} />
         <IbmCta content={ibmPageContent.cta} />
+      </>
+    );
+  }
+
+  if (productSlug === "dashflow") {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          name: "Procitec DashFlow",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Chrome Extension",
+          url: "https://procitec.io/products/dashflow",
+          description: dashflowPageContent.seo.description,
+          featureList: [
+            "Automated dashboard rotation",
+            "Fullscreen TV display mode",
+            "Customer logo upload",
+            "Offline license activation",
+            "Auto-resume after refresh",
+          ],
+          publisher: {
+            "@type": "Organization",
+            name: "Procitec",
+            url: "https://procitec.io",
+          },
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: dashflowPageContent.faq.items.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        },
+      ],
+    };
+
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+        <DashFlowHero content={dashflowPageContent.hero} />
+        <DashFlowFeatureGrid content={dashflowPageContent.benefits} id="benefits" />
+        <DashFlowFeatureGrid
+          content={dashflowPageContent.operations}
+          id="operations"
+          surface="surface"
+        />
+        <DashFlowFeatureGrid content={dashflowPageContent.rollout} id="rollout" />
+        <DashFlowFaq content={dashflowPageContent.faq} />
+        <DashFlowCta content={dashflowPageContent.cta} />
       </>
     );
   }

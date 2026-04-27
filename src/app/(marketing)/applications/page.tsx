@@ -15,7 +15,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "Applications",
   description:
-    "Review Procitec application entry points for EAM, EMS, and future industrial software products.",
+    "Review Procitec application entry points for EAM, EMS, IBM, DashFlow, and future industrial software products.",
   path: "/applications",
 });
 
@@ -29,7 +29,7 @@ export default function ApplicationsPage() {
           description="Each product page is structured for clarity, fast scanning, and practical next steps."
         />
 
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {productContentList.map((product) => (
             <Card key={product.slug} className="flex h-full flex-col">
               <CardHeader>

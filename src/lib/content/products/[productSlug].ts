@@ -231,6 +231,101 @@ export const productContentBySlug: Record<string, ProductContent> = {
       },
     ],
   },
+  dashflow: {
+    slug: "dashflow",
+    name: "DashFlow",
+    eyebrow: "Dashboard Automation Display Tool",
+    status: "Live",
+    summary:
+      "Automated fullscreen IoT dashboard rotation for TV displays, control rooms, and continuous plant visibility.",
+    description:
+      "Procitec DashFlow is a Chrome-based dashboard automation tool that turns IoT dashboards into fullscreen rotating displays, helping teams keep live plant, energy, utility, and operational KPIs visible without manual clicks.",
+    keyBenefit:
+      "Keep critical dashboards visible on shared screens with reliable fullscreen rotation, customer branding, and low-friction daily operation.",
+    audience: [
+      "Plant operations teams",
+      "Energy managers",
+      "Control room operators",
+      "Production supervisors",
+      "Management review teams",
+    ],
+    benefits: [
+      "Automatically cycle selected dashboards and charts without manual navigation",
+      "Keep plant, energy, and utility KPIs visible on TV displays and shared monitoring screens",
+      "Support customer-branded display setups with logo upload for different sites or departments",
+      "Resume rotation after browser refresh for more reliable long-running display operation",
+      "Simplify wall-screen monitoring with configurable timing, spacing, and safe stop control across active tabs",
+      "Improve visibility into missing or abnormal dashboards through built-in console diagnostics",
+    ],
+    capabilities: [
+      {
+        title: "Automated dashboard rotation",
+        description:
+          "Cycle selected IoT dashboards and charts automatically in a fullscreen TV-style display mode.",
+      },
+      {
+        title: "Display control and timing",
+        description:
+          "Configure chart timing, layout spacing, and clean control sections for more practical day-to-day operation.",
+      },
+      {
+        title: "Customer branding",
+        description:
+          "Upload customer-specific logos so display screens can align with plant, department, or client branding needs.",
+      },
+      {
+        title: "License-key activation",
+        description:
+          "Support offline annual license activation today, with server-based activation available as a future control layer.",
+      },
+      {
+        title: "Resilient shared-screen operation",
+        description:
+          "Auto-resume after refresh, show a running-state indicator, and safely stop active dashboard tabs when needed.",
+      },
+    ],
+    industries: [
+      "Manufacturing",
+      "Energy monitoring",
+      "Industrial IoT operations",
+      "Utility and plant monitoring",
+    ],
+    primaryCta: {
+      label: "Book Demo",
+      href: "/contact",
+    },
+    secondaryCta: {
+      label: "Explore Platform",
+      href: "/platform",
+    },
+    seo: {
+      title: "Automated IoT Dashboard TV Display Tool for Plants and Control Rooms",
+      description:
+        "Explore Procitec DashFlow for fullscreen IoT dashboard rotation, customer-branded display screens, license activation, and continuous KPI visibility.",
+    },
+    faq: [
+      {
+        question: "What is Procitec DashFlow used for?",
+        answer:
+          "Procitec DashFlow is used to turn IoT dashboards into automated fullscreen TV displays that rotate selected charts and widgets without manual navigation.",
+      },
+      {
+        question: "Where is DashFlow useful?",
+        answer:
+          "It is suited to shopfloor displays, control rooms, energy monitoring screens, management dashboards, and customer-facing KPI displays where live visibility matters.",
+      },
+      {
+        question: "Can DashFlow support customer branding?",
+        answer:
+          "Yes. DashFlow supports customer-specific PNG logo upload so plants, departments, or client installations can use a branded display experience.",
+      },
+      {
+        question: "How does DashFlow handle licensing?",
+        answer:
+          "DashFlow supports offline license-key activation, with each license valid for one year from activation. Server-based activation can be added later for stricter centralized control.",
+      },
+    ],
+  },
 };
 
 export const productContentList = Object.values(productContentBySlug);

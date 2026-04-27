@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Procitec.io",
   },
   description:
-    "Procitec.io is the product platform for industrial applications such as EAM and EMS.",
+    "Procitec.io is the product platform for industrial applications such as EAM, EMS, IBM, and DashFlow.",
   icons: {
     icon: [{ url: siteConfig.logo.src, type: "image/svg+xml" }],
     shortcut: [{ url: siteConfig.logo.src, type: "image/svg+xml" }],

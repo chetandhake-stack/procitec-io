@@ -11,7 +11,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "Industrial Applications for Reliability, Visibility, and Scale",
   description:
-    "Explore Procitec applications built for industrial teams, with clear entry points for EAM, EMS, and future products.",
+    "Explore Procitec applications built for industrial teams, with clear entry points for EAM, EMS, IBM, DashFlow, and future products.",
   path: "/",
 });
 

@@ -20,7 +20,7 @@ export default function ApplicationsSection() {
           description="Procitec.io keeps the website product-first. Each application card explains the fit, the benefit, and the next action clearly."
         />
 
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {productContentList.map((product) => (
             <Card key={product.slug} className="flex h-full flex-col">
               <CardHeader>

@@ -162,6 +162,14 @@ const platformProducts: PlatformProduct[] = [
     cta: "Explore IBM",
     icon: "inventory_2",
   },
+  {
+    title: "DashFlow",
+    description:
+      "Automated fullscreen dashboard rotation for IoT monitoring screens, control rooms, and shared KPI visibility.",
+    href: "/products/dashflow",
+    cta: "Explore DashFlow",
+    icon: "desktop_windows",
+  },
 ];
 
 const useCases: PlatformUseCase[] = [

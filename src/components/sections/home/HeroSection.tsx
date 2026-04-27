@@ -20,7 +20,7 @@ export default function HeroSection() {
               </h1>
               <p className="max-w-2xl text-base leading-7 text-text-secondary sm:text-lg">
                 Procitec.io is the product platform for industrial applications such
-                as EAM, EMS, and future software products. It helps operational
+                as EAM, EMS, IBM, DashFlow, and future software products. It helps operational
                 teams understand what matters quickly and move directly into the
                 right product path.
               </p>
