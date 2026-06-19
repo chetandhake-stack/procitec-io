@@ -3,6 +3,11 @@ export type EamLink = {
   href: string;
 };
 
+export type EamComparisonItem = {
+  before: string;
+  after: string;
+};
+
 export type EamHeroHighlight = {
   title: string;
   description: string;
@@ -14,6 +19,12 @@ export type EamFeatureCard = {
   description: string;
   icon?: string;
   points?: string[];
+};
+
+export type EamWorkflowStep = {
+  title: string;
+  description: string;
+  icon?: string;
 };
 
 export type EamFaqItem = {

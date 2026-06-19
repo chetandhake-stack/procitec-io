@@ -6,10 +6,10 @@ import Card, {
 } from "@/components/ui/Card";
 import MaterialSymbol from "@/components/ui/MaterialSymbol";
 import SectionHeader from "@/components/ui/SectionHeader";
-import type { EamPageContent } from "@/lib/content/products/eam";
+import type { EamFeatureCard, EamSection } from "@/lib/content/products/eam";
 
 type EamGettingStartedProps = {
-  content: EamPageContent["fieldUse"];
+  content: EamSection<EamFeatureCard>;
 };
 
 export default function EamGettingStarted({ content }: EamGettingStartedProps) {

@@ -6,10 +6,10 @@ import Card, {
 } from "@/components/ui/Card";
 import MaterialSymbol from "@/components/ui/MaterialSymbol";
 import SectionHeader from "@/components/ui/SectionHeader";
-import type { EamPageContent } from "@/lib/content/products/eam";
+import type { EamFeatureCard, EamSection } from "@/lib/content/products/eam";
 
 type EamProblemProps = {
-  content: EamPageContent["problem"];
+  content: EamSection<EamFeatureCard>;
 };
 
 export default function EamProblem({ content }: EamProblemProps) {

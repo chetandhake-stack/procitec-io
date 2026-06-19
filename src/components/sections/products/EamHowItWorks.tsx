@@ -2,10 +2,15 @@ import Container from "@/components/layout/Container";
 import Card from "@/components/ui/Card";
 import MaterialSymbol from "@/components/ui/MaterialSymbol";
 import SectionHeader from "@/components/ui/SectionHeader";
-import type { EamPageContent } from "@/lib/content/products/eam";
+import type { EamWorkflowStep } from "@/lib/content/products/eam";
 
 type EamHowItWorksProps = {
-  content: EamPageContent["howItWorks"];
+  content: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    steps: EamWorkflowStep[];
+  };
 };
 
 export default function EamHowItWorks({ content }: EamHowItWorksProps) {

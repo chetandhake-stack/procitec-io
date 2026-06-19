@@ -1,10 +1,15 @@
 import Container from "@/components/layout/Container";
 import Card from "@/components/ui/Card";
 import SectionHeader from "@/components/ui/SectionHeader";
-import type { EamPageContent } from "@/lib/content/products/eam";
+import type { EamComparisonItem } from "@/lib/content/products/eam";
 
 type EamTransformationProps = {
-  content: EamPageContent["transformation"];
+  content: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    items: EamComparisonItem[];
+  };
 };
 
 export default function EamTransformation({ content }: EamTransformationProps) {
