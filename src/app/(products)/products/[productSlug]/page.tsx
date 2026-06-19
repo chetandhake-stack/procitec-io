@@ -4,13 +4,16 @@ import Container from "@/components/layout/Container";
 import EamArchitecture from "@/components/sections/products/EamArchitecture";
 import EamCta from "@/components/sections/products/EamCta";
 import EamFaq from "@/components/sections/products/EamFaq";
-import EamGettingStarted from "@/components/sections/products/EamGettingStarted";
 import EamHero from "@/components/sections/products/EamHero";
-import EamHowItWorks from "@/components/sections/products/EamHowItWorks";
 import EamModules from "@/components/sections/products/EamModules";
-import EamProblem from "@/components/sections/products/EamProblem";
-import EamTransformation from "@/components/sections/products/EamTransformation";
 import EamUseCases from "@/components/sections/products/EamUseCases";
+import {
+  EamAssetFoundationSection,
+  EamAssetRecordSection,
+  EamFieldWorkflowSection,
+  EamInspectionSopSection,
+  EamOutcomesSection,
+} from "@/components/sections/products/EamVisualSections";
 import DashFlowCta from "@/components/sections/products/DashFlowCta";
 import DashFlowFaq from "@/components/sections/products/DashFlowFaq";
 import DashFlowFeatureGrid from "@/components/sections/products/DashFlowFeatureGrid";
@@ -193,11 +196,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
           }}
         />
         <EamHero content={eamPageContent.hero} />
-        <EamProblem content={eamPageContent.problem} />
-        <EamTransformation content={eamPageContent.transformation} />
-        <EamHowItWorks content={eamPageContent.howItWorks} />
+        <EamOutcomesSection />
+        <EamAssetFoundationSection />
+        <EamAssetRecordSection />
+        <EamFieldWorkflowSection />
+        <EamInspectionSopSection />
         <EamModules content={eamPageContent.modules} />
-        <EamGettingStarted content={eamPageContent.fieldUse} />
         <EamUseCases content={eamPageContent.useCases} />
         <EamArchitecture content={eamPageContent.architecture} />
         <EamFaq content={eamPageContent.faq} />
@@ -219,7 +223,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
           description: ibmPageContent.seo.description,
           featureList: [
             "Installed-base digitization",
-            "Service lifecycle visibility",
+            "Support request workflow",
+            "SOP and lifecycle context",
             "Customer and site visibility",
             "Upgrade and modernization intelligence",
           ],

@@ -7,10 +7,11 @@ export const productContentBySlug: Record<string, ProductContent> = {
     eyebrow: "Enterprise Asset Management",
     status: "Live",
     summary:
-      "Asset and maintenance workflows designed for industrial reliability, visibility, and structured execution.",
+      "Live enterprise asset management for industrial teams that need asset records, maintenance execution, mobile access, and controlled operational visibility.",
     description:
-      "Procitec EAM helps industrial teams manage assets, maintenance activity, and operational visibility with a clear, application-first workflow.",
-    keyBenefit: "Improve asset reliability and reduce maintenance uncertainty.",
+      "Procitec EAM helps industrial teams manage assets, planned maintenance, work execution, documents, and operational visibility with a clear application-first workflow.",
+    keyBenefit:
+      "Improve asset reliability with structured maintenance control, field-ready access, and clearer asset history.",
     audience: [
       "Plant heads",
       "Maintenance managers",
@@ -21,22 +22,29 @@ export const productContentBySlug: Record<string, ProductContent> = {
       "Clearer visibility into asset status and maintenance priorities",
       "Structured work execution for teams managing complex equipment",
       "Operational context that supports better planning and faster response",
+      "Mobile-friendly access for repeat plant and field use",
+      "Document and component context that keeps asset information easier to review",
     ],
     capabilities: [
       {
-        title: "Asset visibility",
+        title: "Asset hierarchy and records",
         description:
-          "Organize asset context and maintenance information so teams can see priorities clearly.",
+          "Organize plant, area, line, machine, component, document, and maintenance context in structured asset records.",
       },
       {
-        title: "Maintenance execution",
+        title: "Preventive work and execution",
         description:
-          "Support planned work, routine tasks, and follow-through with consistent workflows.",
+          "Support preventive maintenance, work orders, inspections, assigned tasks, and follow-through with consistent workflows.",
       },
       {
-        title: "Operational alignment",
+        title: "Field-ready mobile use",
         description:
-          "Keep stakeholders aligned across sites with shared application structure and clearer status visibility.",
+          "Support mobile and PWA-oriented access so plant users can review asset information without staying at a desk.",
+      },
+      {
+        title: "Operational review",
+        description:
+          "Keep stakeholders aligned with downtime, history, follow-up activity, and clearer status visibility across sites.",
       },
     ],
     industries: ["Manufacturing", "Process plants", "Infrastructure operations"],
@@ -135,13 +143,13 @@ export const productContentBySlug: Record<string, ProductContent> = {
     slug: "ibm",
     name: "IBM",
     eyebrow: "Installed Base Manager",
-    status: "Coming Soon",
+    status: "Live",
     summary:
-      "Installed-base intelligence for industrial equipment providers that need stronger service visibility, customer continuity, and long-term lifecycle control.",
+      "Live installed-base management for industrial equipment providers that need asset visibility, support request control, service continuity, and lifecycle follow-up.",
     description:
-      "Procitec IBM is planned to help OEMs, service teams, and industrial account owners digitize installed equipment records, track lifecycle status, coordinate service follow-up, and identify upgrade opportunities in one structured application.",
+      "Procitec IBM helps OEMs, service teams, and industrial account owners digitize installed equipment records, track lifecycle status, coordinate support requests, manage SOP context, and identify upgrade opportunities in one structured application.",
     keyBenefit:
-      "Turn scattered customer asset records into a structured installed-base system for better service response, stronger customer relationships, and scalable lifecycle growth.",
+      "Turn scattered customer asset records into a live installed-base system for better support response, stronger customer relationships, and scalable lifecycle growth.",
     audience: [
       "Aftermarket service leaders",
       "OEM operations teams",
@@ -169,9 +177,14 @@ export const productContentBySlug: Record<string, ProductContent> = {
           "Maintain a clearer view of where equipment is installed, who owns it, and what commercial or service relationship surrounds it.",
       },
       {
-        title: "Service lifecycle visibility",
+        title: "Support request workflow",
         description:
-          "Track maintenance status, service coverage, support follow-up, and open lifecycle actions across the installed base.",
+          "Let IBM viewers create and review asset-linked support requests while manager workflows handle action, review, and follow-up.",
+      },
+      {
+        title: "SOP and lifecycle context",
+        description:
+          "Keep SOP guidance, service coverage, lifecycle actions, and customer equipment context easier to review.",
       },
       {
         title: "Upgrade and modernization intelligence",
@@ -201,13 +214,13 @@ export const productContentBySlug: Record<string, ProductContent> = {
     seo: {
       title: "Installed Base Management Software for Industrial Equipment Providers",
       description:
-        "Explore the Procitec IBM direction for installed-base visibility, service coordination, lifecycle tracking, and industrial customer asset intelligence.",
+        "Explore live Procitec IBM capabilities for installed-base visibility, support request coordination, lifecycle tracking, and industrial customer asset intelligence.",
     },
     faq: [
       {
         question: "What is Procitec IBM designed to manage?",
         answer:
-          "Procitec IBM is intended to manage the installed base of industrial equipment across customers, sites, service contracts, and lifecycle relationships in one structured view.",
+          "Procitec IBM manages the installed base of industrial equipment across customers, sites, service contracts, support requests, and lifecycle relationships in one structured view.",
       },
       {
         question: "Who is Procitec IBM for?",
@@ -217,7 +230,7 @@ export const productContentBySlug: Record<string, ProductContent> = {
       {
         question: "How does Procitec IBM support digitization?",
         answer:
-          "It is intended to replace fragmented spreadsheets and disconnected installed-equipment lists with a structured digital record of customers, sites, equipment, and service history.",
+          "It replaces fragmented spreadsheets and disconnected installed-equipment lists with a structured digital record of customers, sites, equipment, SOP context, support requests, and service history.",
       },
       {
         question: "How can Procitec IBM improve customer satisfaction?",
@@ -227,7 +240,7 @@ export const productContentBySlug: Record<string, ProductContent> = {
       {
         question: "What is the long-term value of Procitec IBM?",
         answer:
-          "Over time, Procitec IBM is intended to create a stronger installed-base foundation for service growth, modernization planning, commercial follow-up, and more durable customer relationships.",
+          "Over time, Procitec IBM creates a stronger installed-base foundation for service growth, modernization planning, commercial follow-up, and more durable customer relationships.",
       },
     ],
   },

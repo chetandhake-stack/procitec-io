@@ -93,7 +93,7 @@ export const ibmPageContent: IbmPageContent = {
     headline:
       "Digitize the installed base so service teams, account teams, and customers work from the same equipment truth.",
     description:
-      "Procitec IBM is planned for industrial equipment providers that need a cleaner view of installed assets, service follow-up, modernization opportunities, and customer history across sites and accounts.",
+      "Procitec IBM is live for industrial equipment providers that need a cleaner view of installed assets, support requests, service follow-up, SOP context, modernization opportunities, and customer history across sites and accounts.",
     primaryCta: {
       label: "Book Demo",
       href: "/contact",
@@ -283,7 +283,7 @@ export const ibmPageContent: IbmPageContent = {
       {
         question: "What is Procitec IBM designed to manage?",
         answer:
-          "Procitec IBM is intended to manage the installed base of industrial equipment across customers, sites, service relationships, and lifecycle follow-up in one structured system.",
+          "Procitec IBM manages the installed base of industrial equipment across customers, sites, service relationships, support requests, SOP context, and lifecycle follow-up in one structured system.",
       },
       {
         question: "Who benefits most from Procitec IBM?",
@@ -293,7 +293,7 @@ export const ibmPageContent: IbmPageContent = {
       {
         question: "How does IBM help with digitization?",
         answer:
-          "IBM is intended to replace scattered spreadsheets and fragmented account notes with a cleaner digital record of installed equipment, customer context, and service history.",
+          "IBM replaces scattered spreadsheets and fragmented account notes with a cleaner digital record of installed equipment, customer context, support requests, SOP context, and service history.",
       },
       {
         question: "How can IBM improve customer satisfaction?",
@@ -303,7 +303,7 @@ export const ibmPageContent: IbmPageContent = {
       {
         question: "What is the long-term value of IBM?",
         answer:
-          "Over time, IBM is intended to support stronger retention, modernization planning, service growth, and more durable installed-base intelligence across the business.",
+          "Over time, IBM supports stronger retention, modernization planning, service growth, and more durable installed-base intelligence across the business.",
       },
     ],
   },

@@ -15,7 +15,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "Applications",
   description:
-    "Review Procitec application entry points for EAM, EMS, IBM, DashFlow, and future industrial software products.",
+    "Review Procitec application entry points for live EAM, live IBM, EMS, DashFlow, and future industrial software products.",
   path: "/applications",
 });
 
@@ -25,8 +25,8 @@ export default function ApplicationsPage() {
       <Container className="space-y-10">
         <SectionHeader
           eyebrow="Applications"
-          title="Explore Procitec applications by product path."
-          description="Each product page is structured for clarity, fast scanning, and practical next steps."
+          title="Explore Procitec applications by operational need."
+          description="Live EAM and IBM products are available now, with each application structured for clear feature scanning and practical next steps."
         />
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -43,13 +43,30 @@ export default function ApplicationsPage() {
               </CardHeader>
               <CardContent className="flex-1 space-y-3">
                 <p className="font-medium text-text-primary">{product.keyBenefit}</p>
-                <ul className="space-y-2">
-                  {product.audience.map((item) => (
-                    <li key={item} className="text-sm leading-6 text-text-secondary">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <div className="space-y-2">
+                  <p className="text-xs font-semibold uppercase text-text-muted">
+                    Current feature coverage
+                  </p>
+                  <ul className="space-y-2">
+                    {product.capabilities.slice(0, 3).map((item) => (
+                      <li key={item.title} className="text-sm leading-6 text-text-secondary">
+                        {item.title}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="space-y-2">
+                  <p className="text-xs font-semibold uppercase text-text-muted">
+                    Built for
+                  </p>
+                  <ul className="space-y-2">
+                    {product.audience.slice(0, 3).map((item) => (
+                      <li key={item} className="text-sm leading-6 text-text-secondary">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </CardContent>
               <CardFooter className="flex-col items-stretch sm:flex-row">
                 <Button href={`/products/${product.slug}`} className="w-full sm:w-auto">

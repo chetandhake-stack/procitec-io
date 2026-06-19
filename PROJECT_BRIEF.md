@@ -15,7 +15,7 @@ Present Procitec applications clearly and professionally, and direct users to:
 ## Applications
 - EAM: https://eam.procitec.io/
 - EMS: https://ems.procitec.io/ (planned)
-- IBM: Procitec Installed Base Manager (planned)
+- IBM: Procitec Installed Base Manager (live)
 - DashFlow: Automated IoT dashboard TV display tool
 
 ## Audience

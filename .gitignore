@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local review artifacts
+.playwright-mcp/
+Marketing image - 3.png
+Marketing image - 4.png
+public/icons/EN - Procitec.png
